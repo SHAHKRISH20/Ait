@@ -9,7 +9,7 @@
 			body{
 					background-image: url('CollegeRegistrationBg.jpg');
 					background-repeat: no-repeat;
-					height: 700px;
+					height: 500px;
 					background-size: cover;
 					background-position: center;
 				}
@@ -19,6 +19,7 @@
 			    width: 400px;
 			    padding: 0;
 			    margin: 0;
+			    margin-top: 60px;
 			}
 
 
@@ -52,166 +53,97 @@
 			    margin-left: 10px;
 			    margin-bottom: 10px;
 			}
-			#registration{
-				
-			}
 		</style>
-
-		<script>
-		$(document).ready(function(){
-		 	$("#submit").click(function(){
-		 		validation();	
-			});	
-
-		 	function validation() {
-		 		var name = $('#name').val();
-		 		var nameValidation = 0;
-
-		 		if($.trim(name).length > 0){
-		 			
-		 			if(characterCheck(name)){
-		 				$('#nameValidation').html('');
-		 				nameValidation = 0;
-		 			}else{
-		 				$('#nameValidation').html('Invalid Name');
-		 				nameValidation = 1;
-		 			}
-		 		}else{
-		 			$('#nameValidation').html('Field is required');
-		 			nameValidation = 1;
-		 		}
-
-		 		var mobile = $('#mobile').val();
-		 		var mobileValidation = 0;
-
-		 		if($.trim(mobile).length > 0){
-		 			
-		 			if(mobileNumberCheck(mobile)){
-		 				$('#mobileValidation').html('');
-		 				mobileValidation = 0;
-		 			}else{
-		 				$('#mobileValidation').html('Invalid Mobile');
-		 				mobileValidation = 1;
-		 			}
-		 		}else{
-		 			$('#mobileValidation').html('Field is required');
-		 			mobileValidation = 1;
-		 		}
-
-		 		var mail = $('#mail').val();
-		 		var mailValidation = 0;
-
-		 		if($.trim(mail).length > 0){
-		 			
-		 			if(mailCheck(mail)){
-		 				$('#mailValidation').html('');
-		 				mailValidation = 0;
-		 			}else{
-		 				$('#mailValidation').html('Invalid E-mail');
-		 				mailValidation = 1;
-		 			}
-		 		}else{
-		 			$('#mailValidation').html('Field is required');
-		 			mailValidation = 1;
-		 		}
-
-		 		var hobbies = $('#hobbies').val();
-		 		var hobbiesValidation = 0;
-
-		 		$('#hobbiesValidation').html('Field is required');
-		 		hobbiesValidation = 1;
-
-		 		var city = $('#city').val();
-				var cityValidation =0;
-
-				$('#cityValidation').html('Field is required')
-				cityValidation = 1;
-
-		 		if(nameValidation == 0 && mobileValidation == 0 && mailValidation == 0){
-		 			alert("Success");
-		 		}
-		 	}
-
-		 });
-	</script>
+	
 	</head>
 	<body>
 		<center>
-		<form id="registration">
-			<div class="main">
-				<h1>REGISTRATION FORM</h1>
-				<div class="row">
+			<form id="registration" method="POST">
+				<div class="main">
+					<h1>REGISTRATION FORM</h1>
+					<div class="row">
+						<div class="col">
+							<label for="name">Name:-</label>
+						</div>
+						<div class="col">
+							<input type="text" name="name" id="name" placeholder="Enter Your Name"  />
+							<span id="nameValidation"></span>
+						</div>
+					</div><br /><br />
+					<div class="row">
+						<div class="col">
+							Mobile Number:-
+						</div>
+						<div class="col">
+							<input type="tel" id="mobile" placeholder="Enter Your Number" name="mobile" />
+							<span id="mobileValidation"></span>
+						</div>
+					</div><br /><br />
+					<div class="row">
 					<div class="col">
-						<label for="name">Name:-</label>
-					</div>
+						Gender:-
+					</div>		
 					<div class="col">
-						<input type="text" name="name" id="name" placeholder="Enter Your Name"  />
-						<span id="nameValidation"></span>
+						<div class="col-1">
+							<input type="radio" name="gender" id="Male" ><label for="Male">Male</label></input>
+							<input type="radio" name="gender" id="Female" /><label for="Female">Female</label>
+						</div>
+						<span id="genderValidation"></span>
+					</div><br /><br />
+					<div class="row">
+						<div class="col">
+							E-mail:-
+						</div>
+						<div class="col">
+							<input type="email" name="mail" id="mail" placeholder="Enter Your E-mail-Id" />
+							<span id="mailValidation"></span>
+						</div>
+					</div><br /><br />
+					<div class="row">
+						<div class="col">
+							Hobbies
+						</div>
+						<div class="col-1">
+							<input type="checkbox" name="hobbies" id="Cricket" /><label id="Cricket">Cricket</label>
+							<input type="checkbox" name="hobbies" id="Hockey" /><label id="Hockey">Hockey
+							</label>
+							<input type="checkbox" name="hobbies" id="Volleyball" /><label id="Volleyball">Volleyball</label>
+							<input type="checkbox" name="hobbies" id="Badminton" /><label id="Badminton">Badminton</label><br />
+							<span id="hobbiesValidation"></span>
+						</div>
+					</div><br /><br />
+					<div class="row">
+						<div class="col">
+							City:-
+						</div>
+						<div class="col">
+							<select id="city" name="city">
+								<option>Ahmedabad</option>
+								<option>Surat</option>
+								<option>Mumbai</option>
+								<option>Hyderabadbad</option>
+								<option>Rajkot</option>
+							</select><br />
+							<span id="cityValidation"></span>
+						</div>
+					</div><br /><br />
+					<div align="center">
+						<button onclick="myFunction()">Submit</button>
 					</div>
-				</div><br /><br />
-				<div class="row">
-					<div class="col">
-						Mobile Number:-
-					</div>
-					<div class="col">
-						<input type="tel" id="mobile" placeholder="Enter Your Number" name="mobile" />
-						<span id="mobileValidation"></span>
-					</div>
-				</div><br /><br />
-				<div class="row">
-				<div class="col">
-					Gender:-
-				</div>		
-				<div class="col">
-					<div class="col-1">
-						<input type="radio" name="gender" id="Male" ><label for="Male">Male</label></input>
-						<input type="radio" name="gender" id="Female" /><label for="Female">Female</label>
-					</div>
-					<span id="genderValidation"></span>
-				</div><br /><br />
-				<div class="row">
-					<div class="col">
-						E-mail:-
-					</div>
-					<div class="col">
-						<input type="email" name="mail" id="mail" placeholder="Enter Your E-mail-Id" />
-						<span id="mailValidation"></span>
-					</div>
-				</div><br /><br />
-				<div class="row">
-					<div class="col">
-						Hobbies
-					</div>
-					<div class="col-1">
-						<input type="checkbox" name="hobbies" id="Cricket" /><label id="Cricket">Cricket</label>
-						<input type="checkbox" name="hobbies" id="Hockey" /><label id="Hockey">Hockey
-						</label>
-						<input type="checkbox" name="hobbies" id="Volleyball" /><label id="Volleyball">Volleyball</label>
-						<input type="checkbox" name="hobbies" id="Badminton" /><label id="Badminton">Badminton</label><br />
-						<span id="hobbiesValidation"></span>
-					</div>
-				</div><br /><br />
-				<div class="row">
-					<div class="col">
-						City:-
-					</div>
-					<div class="col">
-						<select id="city" name="city">
-							<option>Ahmedabad</option>
-							<option>Surat</option>
-							<option>Mumbai</option>
-							<option>Hyderabadbad</option>
-							<option>Rajkot</option>
-						</select><br />
-						<span id="cityValidation"></span>
-					</div>
-				</div><br /><br />
-				<div align="center">
-					<button type="button" id="submit">Submit</button>
 				</div>
-			</div>
-		</form>
+			</form>
 		<center>
+
+		<script>
+			function myFunction(){
+				alert("Submitted your form");
+			}
+		</script>
+
+		<a href="../Dice/Dice.html"><img src="left.jpg"></a>
+		<a href="../Employee Table/employeetable.html"><img src="right.jpg"></a>
+
+
 	</body>
 	
 </html>
