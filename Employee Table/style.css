@@ -1,6 +1,16 @@
 table,td{
 	border: 1px solid black;
+	margin-top: 250px;
 }
-td{
-	width: 80%;
+#left{
+	border: 1px solid black;
+	text-align: center;
+	width: 70%;
+	height: 50px;
+}
+#right{
+	border: 1px solid black;
+	text-align: center;
+	width: 70%;
+	height: 50px;
 }
