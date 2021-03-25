@@ -23,7 +23,23 @@
         margin: 50px;
       }
     </style>
-
+    <script>
+      var Player1 = "player1";
+      var Player2 = "player2";
+      function rolldice(){
+        var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+        var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+        document.querySelector(".img1").setAttribute("src", "Dice " + randomNumber1 + ".png");
+        document.querySelector(".img2").setAttribute("src", "Dice " + randomNumber2 + ".png");
+        if(randomNumber1 == randomNumber2){
+          document.querySelector("h1").innerHTML = "DRAW!";
+        }else if(randomNumber1 < randomNumber2){
+          document.querySelector("h1").innerHTML = ("Player2 Wins!!");
+        }else{
+          document.querySelector("h1").innerHTML = ("Player1 Wins!!");
+        }
+      };
+    </script>
 
   </head>
   <body>
@@ -42,22 +58,10 @@
         <button type="button" onclick="rolldice()">Roll the dice</button>
     </center>
 
-    <script>
-      var Player1 = "player1";
-      var Player2 = "player2";
-      function rolldice(){
-        var randomNumber1 = Math.floor(Math.random() * 6) + 1;
-        var randomNumber2 = Math.floor(Math.random() * 6) + 1;
-        document.querySelector(".img1").setAttribute("src", "Dice " + randomNumber1 + ".png");
-        document.querySelector(".img2").setAttribute("src", "Dice " + randomNumber2 + ".png");
-        if(randomNumber1 == randomNumber2){
-          document.querySelector("h1").innerHTML = "DRAW!";
-        }else if(randomNumber1 < randomNumber2){
-          document.querySelector("h1").innerHTML = ("Player2 Wins!!");
-        }else{
-          document.querySelector("h1").innerHTML = ("Player1 Wins!!");
-        }
-      };
-    </script>
+    
+    <center>
+      <a href="..\Bulb\Bulb.html"><img src="left.png" width="100px" height="100px"></a>
+      <a href="..\Employee Table\employeetable.html"><img src="right.png" width="100px" height="100px"></a>
+    </center>
   </body>
 </html>
