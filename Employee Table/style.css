@@ -19,8 +19,8 @@ table,td{
 #container{
 	display: flex;
 	background-color: #004E7C;
-	padding-top: 20px;
-	padding-bottom: 20px;
+/*	padding-top: 20px;
+	padding-bottom: 20px;*/
 }
 img{
 	width: 100px;
