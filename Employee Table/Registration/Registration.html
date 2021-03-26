@@ -1,149 +1,154 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" type="image/xicon" href="..\aitlogo.png">
-		<title>Registration Page</title>
-		<style type="text/css">
-			body{
-					background-image: url('CollegeRegistrationBg.jpg');
-					background-repeat: no-repeat;
-					height: 500px;
-					background-size: cover;
-					background-position: center;
-				}
-			.main{
-			    border: 1px solid black;
-			    height: 480px;
-			    width: 400px;
-			    padding: 0;
-			    margin: 0;
-			    margin-top: 60px;
-			}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
 
+    <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color:#1c2e50;
+            }
+            h1 {
+                font-size: 2em;
+                text-align: center;
+                color: #1c2e50;
+            }
+            .container {
+                padding: 100px;
+                margin: 100px;
+                background-color: white;
+            }
+            label {
+                font-size: 16px;
+            }
+            #fname, #lname, #email, #current_add, #permanent_add, #pwd {
+                width: 100%;
+                padding: 10px;
+                margin: 15px 0 22px 0;
+                display: inline-block;
+                border: 2px solid #1c2e50;
+                background: #f1f1f1;
+            }
+            #male, #female, #other, #hobby1, #hobby2, #hobby3, #current_same{
+                margin: 15px;
+            }
+            #approve {
+                font-size: 18px;
+                margin: 25px auto;
+            }
+            a {
+                color: black;    
+            }  
+            hr {
+                border: 2px solid #1c2e50;
+                margin: auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                width: 30%;
+            }
+              
+            #reset, #submit {
+                background-color: #1c2e50;
+                color: white;
+                padding: 16px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 40%;
+                opacity: 0.9;
+                font-size: 20px;
+              }
+              
+              #reset:hover, #submit:hover {
+                opacity: 1;
+              }
+    </style>
+</head>
+<body>
+    <form action="nothing.php" class="container" method="GET">
+        <h1>Registration Form</h1>
+        <hr>
 
-			.row{
-			    width: 400px;
-			    height: 50px;
-			    padding: 0;
-			    margin: 0;
-			    text-align: left;
-			    float: left;
-			}
-			.col{
-			    width: 150px;
-			    height: 50px;
-			    float: left;
-			    padding: 0;
-			    margin: 0;
-			    text-align: left;
-			    margin-left: 10px;
-			    margin-bottom: 10px;
-			    margin-top: 10px;
-			}
+        <label for="fname"><b>First Name</b></label>
+        <input type="text" name="fname" id="fname" placeholder="Enter Your First Name" pattern="[A-Za-z]+" required>
+        <br>
 
-			.row.col-1{
-			    width: 65px;
-			    height: 50px;
-			    float: left;
-			    padding: 0;
-			    margin: 0;
-			    text-align: left;
-			    margin-left: 10px;
-			    margin-bottom: 10px;
-			}
-		</style>
-	
-	</head>
-	<body>
-		<center>
-			<form id="registration" method="POST">
-				<div class="main">
-					<h1>REGISTRATION FORM</h1>
-					<div class="row">
-						<div class="col">
-							<label for="name">Name:-</label>
-						</div>
-						<div class="col">
-							<input type="text" name="name" id="name" placeholder="Enter Your Name"  />
-							<span id="nameValidation"></span>
-						</div>
-					</div><br /><br />
-					<div class="row">
-						<div class="col">
-							Mobile Number:-
-						</div>
-						<div class="col">
-							<input type="tel" id="mobile" placeholder="Enter Your Number" name="mobile" />
-							<span id="mobileValidation"></span>
-						</div>
-					</div><br /><br />
-					<div class="row">
-					<div class="col">
-						Gender:-
-					</div>		
-					<div class="col">
-						<div class="col-1">
-							<input type="radio" name="gender" id="Male" ><label for="Male">Male</label></input>
-							<input type="radio" name="gender" id="Female" /><label for="Female">Female</label>
-						</div>
-						<span id="genderValidation"></span>
-					</div><br /><br />
-					<div class="row">
-						<div class="col">
-							E-mail:-
-						</div>
-						<div class="col">
-							<input type="email" name="mail" id="mail" placeholder="Enter Your E-mail-Id" />
-							<span id="mailValidation"></span>
-						</div>
-					</div><br /><br />
-					<div class="row">
-						<div class="col">
-							Hobbies
-						</div>
-						<div class="col-1">
-							<input type="checkbox" name="hobbies" id="Cricket" /><label id="Cricket">Cricket</label>
-							<input type="checkbox" name="hobbies" id="Hockey" /><label id="Hockey">Hockey
-							</label>
-							<input type="checkbox" name="hobbies" id="Volleyball" /><label id="Volleyball">Volleyball</label>
-							<input type="checkbox" name="hobbies" id="Badminton" /><label id="Badminton">Badminton</label><br />
-							<span id="hobbiesValidation"></span>
-						</div>
-					</div><br /><br />
-					<div class="row">
-						<div class="col">
-							City:-
-						</div>
-						<div class="col">
-							<select id="city" name="city">
-								<option>Ahmedabad</option>
-								<option>Surat</option>
-								<option>Mumbai</option>
-								<option>Hyderabadbad</option>
-								<option>Rajkot</option>
-							</select><br />
-							<span id="cityValidation"></span>
-						</div>
-					</div><br /><br />
-					<div align="center">
-						<button onclick="myFunction()">Submit</button>
-					</div>
-				</div>
-			</form>
-		<center>
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" name="lname" id="lname" placeholder="Enter Your Last Name" pattern="[A-Za-z]+" required>
+        <br>
 
-		<script>
-			function myFunction(){
-				alert("Submitted your form");
-			}
-		</script>
+        <label for="email"><b>Email</b></label>
+        <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+        <br>
 
-		<a href="../Dice/Dice.html"><img src="left.jpg"></a>
-		<a href="../Employee Table/employeetable.html"><img src="right.jpg"></a>
+        <label for="gender"><b>Gender</b></label>
+        <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+        <input type="radio" name="gender" id="female">
+            <label for="female">Female</label>
+        <input type="radio" name="gender" id="other">
+            <label for="other">Other</label>
+        <br>
 
+        <label for="hobby"><b>Hobby</b></label>
+        <input type="checkbox" name="hobby1" id="hobby1">
+            <label for="hobby1">Cricket</label>
+        <input type="checkbox" name="hobby2" id="hobby2">
+            <label for="hobby2">Hockey</label>
+        <input type="checkbox" name="hobby3" id="hobby3">
+            <label for="hobby3">Kabbadi</label>
+        <br><br>
+        
+        <label for="current_add"><b>Current Address</b></label>
+        <textarea name="current_add" id="current_add" cols="30" rows="1" placeholder="Enter Your Address" required></textarea>
+        <br>
 
-	</body>
-	
+        <input type="checkbox" name="current_same" id="current_same" onclick="check()">
+        <label for="current_same"> Same as above </label>
+        <br><br>
+
+        <label for="permanent_add"><b>Permanant Address</b></label>
+        <textarea name="permanent_add" id="permanent_add" cols="30" rows="1" placeholder="Enter Your Address" required></textarea>
+        <br>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" name="pwd" id="pwd" placeholder="Enter Your Password" minlength="5" required>
+        <br>
+
+        <input type="checkbox" name="approve" id="approve" required>
+        <label for="approve"> &nbsp; I accept to the <a href="">Terms & Conditions</a></label>
+        <br>
+
+        <input type="reset" value="Reset" id="reset">
+        <input type="submit" value="Submit" id="submit">
+
+    </form>
+
+    <script>
+        function check() {
+
+            var current_add = document.getElementById('current_add');
+            var permanent_add = document.getElementById('permanent_add');
+            var current_same = document.getElementById('current_same');
+
+            if (current_same.checked == true) {
+                permanent_add.value = current_add.value;
+                permanent_add.disabled = true;
+            } 
+            else {
+                permanent_add.disabled = false;
+            }
+        } 
+        
+    </script>
+    
+</body>
 </html>
