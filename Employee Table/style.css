@@ -57,7 +57,7 @@ p{
 	margin-left: auto;
 	margin-right: auto;
 }
-i{
+b{
     width: 100px;
     font-size: 20px; 
   height: 100px;
@@ -69,6 +69,5 @@ i{
 	0% {color: #9400D3;}
 	25% {color: #4B0082	;}
 	50% {color: #0000FF	;}
-	75% {color: #00FF00	;}
 	100% {color: red;}
 }
