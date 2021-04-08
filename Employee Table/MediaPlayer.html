@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Player</title>
+</head>
+<body>
+	<video id="Video" width="420px" controls>Your browser don't have support
+		<source src="C:\Users\Dell\Downloads\index.mp4">
+	</video>
+	<br><br><br>
+	<button onclick="small()">Small</button>
+	<button onclick="medium()">Medium</button>
+	<button onclick="big()">Big</button>
+	<button onclick="normal()">Normal</button>
+
+	<script type="text/javascript">
+		var Vid = document.getElementById("Video");
+
+		function small(){
+			Vid.width = 25 0;
+
+		}
+		function medium(){
+			Vid.width = 350;
+		}
+		function big(){
+			Vid.width = 500;
+		}
+		function normal(){
+			Vid.width = 420;
+		}
+	</script>
+</body>
+</html>
