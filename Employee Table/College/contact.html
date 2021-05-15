@@ -281,3 +281,49 @@ Author URL: http://w3layouts.com
 <!-- disable body scroll which navbar is in active -->
 <!-- //jQuery-Photo-filter-lightbox-portfolio-plugin -->
 <script src="assets/js/bootstrap.min.js"></script>
+<!-- Disable Script -->
+<script>
+  document.addEventListener('keydown', function() {
+    if (event.keyCode == 123) {
+      return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+    //   alert("This function has been disabled to prevent you from stealing my code!");
+      return false;
+    } else if (event.ctrlKey && event.keyCode == 85) {
+    //   alert("This function has been disabled to prevent you from stealing my code!");
+      return false;
+    }
+    }, false);
+    
+    if (document.addEventListener) {
+    document.addEventListener('contextmenu', function(e) {
+    //   alert("This function has been disabled to prevent you from stealing my code!");
+      e.preventDefault();
+    }, false);
+    } else {
+    document.attachEvent('oncontextmenu', function() {
+    //   alert("This function has been disabled to prevent you from stealing my code!");
+      window.event.returnValue = false;
+    });
+    }
+  </script>
+  <script>  
+    document.onkeypress = function (event) {  
+    event = (event || window.event);  
+    if (event.keyCode == 123) {  
+    return false;  
+    }  
+    }  
+    document.onmousedown = function (event) {  
+    event = (event || window.event);  
+    if (event.keyCode == 123) {  
+    return false;  
+    }  
+    }  
+    document.onkeydown = function (event) {  
+    event = (event || window.event);  
+    if (event.keyCode == 123) {  
+    return false;  
+    }  
+    }  
+    </script>  
