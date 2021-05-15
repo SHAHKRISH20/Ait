@@ -836,6 +836,7 @@ Author URL: http://w3layouts.com
     });
   });
 </script>
+<!-- Disable Script -->
 <script>
 document.addEventListener('keydown', function() {
 	if (event.keyCode == 123) {
@@ -861,5 +862,25 @@ document.addEventListener('keydown', function() {
 	});
   }
 </script>
+<script>  
+	document.onkeypress = function (event) {  
+	event = (event || window.event);  
+	if (event.keyCode == 123) {  
+	return false;  
+	}  
+	}  
+	document.onmousedown = function (event) {  
+	event = (event || window.event);  
+	if (event.keyCode == 123) {  
+	return false;  
+	}  
+	}  
+	document.onkeydown = function (event) {  
+	event = (event || window.event);  
+	if (event.keyCode == 123) {  
+	return false;  
+	}  
+	}  
+	</script>  
 <!--//pop-up-box-->
 <script src="assets/js/bootstrap.min.js"></script>
